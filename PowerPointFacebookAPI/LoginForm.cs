@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Facebook;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using PowerPoint = Microsoft.Office.Interop.PowerPoint;
-using Office = Microsoft.Office.Core;
-using Facebook;
 using System.Net;
+using System.Windows.Forms;
 
 namespace PowerPointFacebookAPI
 {
@@ -30,7 +22,6 @@ namespace PowerPointFacebookAPI
 
         private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
-            //MessageBox.Show(webBrowser1.Url.AbsoluteUri.ToString());
             if (webBrowser1.Url.AbsolutePath == "/connect/login_success.html" && _login)
             {
                 string url = webBrowser1.Url.ToString();
@@ -51,12 +42,6 @@ namespace PowerPointFacebookAPI
 　　            Bitmap bmp = new Bitmap(res.GetResponseStream());
                 parent.button1.Image = new Bitmap(bmp);
                 parent.button2.Enabled = true;
-                /*PowerPoint._Application myPPT = Globals.ThisAddIn.Application;
-                var Sld = myPPT.ActiveWindow.View.Slide;
-                PowerPoint.Shape textBox = Sld.Shapes.AddTextbox(Office.MsoTextOrientation.msoTextOrientationHorizontal, 50, 50, 600, 400);
-                textBox.Select();
-                textBox.Name = "Question";
-                textBox.TextFrame.TextRange.InsertAfter(icon.ToString());*/
                 parent.button1.SuperTip = "在facebook上的 " + name;
                 this.Hide();
             }

@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
-using PowerPoint = Microsoft.Office.Interop.PowerPoint;
-using Office = Microsoft.Office.Core;
-
-namespace PowerPointFacebookAPI
+﻿namespace PowerPointFacebookAPI
 {
     public partial class ThisAddIn
     {
         public const string _appkey = "444619572275296";
-        public const string _appsecret = "6254b75eed00ad4edb403a3fd132fc75";
         private static string _userid = "";
         private static string _access_token = "";
 

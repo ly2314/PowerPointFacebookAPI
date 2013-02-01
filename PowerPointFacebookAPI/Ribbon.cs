@@ -1,27 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Facebook;
 using Microsoft.Office.Tools.Ribbon;
-using System.Windows.Forms;
-using System.Net;
-using System.IO;
-using PowerPoint = Microsoft.Office.Interop.PowerPoint;
-using Office = Microsoft.Office.Core;
-using Facebook;
-using System.Drawing;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
+using System.IO;
+using System.Net;
+using System.Windows.Forms;
+using PowerPoint = Microsoft.Office.Interop.PowerPoint;
 
 namespace PowerPointFacebookAPI
 {
     public partial class Ribbon
     {
-        public const String FACEBOOK_APP_ID = "444619572275296";
         public readonly String[] PERMISSIONS = new String[] { "email", "publish_stream", "user_about_me", "publish_actions" };
 
-        private FacebookClient _facebook = new FacebookClient();   
-     
-
+        private FacebookClient _facebook = new FacebookClient();
         
         private void Ribbon_Load(object sender, RibbonUIEventArgs e)
         {
